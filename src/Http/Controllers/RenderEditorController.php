@@ -23,6 +23,7 @@ class RenderEditorController
         }
 
         return view('dropblockeditor-mailcoach::editor', [
+            'title' => "$model->name | Editor",
             'model' => $model,
             'html' => $html,
             'activeBlocks' => $activeBlocks,
