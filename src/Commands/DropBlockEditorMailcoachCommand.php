@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Jeffreyvr\DropBlockEditorMailcoach\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class DropBlockEditorMailcoachCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'dropblockeditor-mailcoach';
 
     public $description = 'My command';
 
