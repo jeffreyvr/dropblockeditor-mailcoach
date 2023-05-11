@@ -2,18 +2,17 @@
 
 namespace Jeffreyvr\DropBlockEditorMailcoach\Http\Livewire;
 
+use Jeffreyvr\DropBlockEditor\Parsers\Parse;
 use Livewire\Component;
-use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 use Spatie\Mailcoach\Http\App\Livewire\LivewireFlash;
-use Spatie\Mailcoach\Domain\Campaign\Models\Concerns\HasHtmlContent;
 
 class SaveButton extends Component
 {
     use LivewireFlash;
 
     public $model;
-    public $result;
-    public $activeBlocks;
+
+    public $properties;
 
     protected $listeners = [
         'editorIsUpdated' => 'editorIsUpdated',
@@ -21,24 +20,30 @@ class SaveButton extends Component
 
     public function editorIsUpdated($properties)
     {
-        $this->result = $properties['result'];
-        $this->activeBlocks = $properties['activeBlocks'];
+        $this->properties = $properties;
     }
 
-    public function mount(HasHtmlContent $model)
+    public function mount($properties)
     {
-        $this->model = $model;
+        $this->model = $properties['model'];
     }
 
     public function save()
     {
-        $this->model->setTemplateFieldValues([
-            'html' => $this->result['rendered'],
-            'json' => collect($this->activeBlocks)
-                ->toJson()
+        $rendered = Parse::execute([
+            'activeBlocks' => $this->properties['activeBlocks'],
+            'base' => $this->properties['base'],
+            'context' => 'rendered',
+            'parsers' => $this->properties['parsers'],
         ]);
 
-        $this->model->content($this->result['rendered']);
+        $this->model->setTemplateFieldValues([
+            'html' => $rendered,
+            'json' => collect($this->properties['activeBlocks'])
+                ->toJson(),
+        ]);
+
+        $this->model->content($rendered);
 
         $this->flash(__mc(':name was updated.', ['name' => $this->model->fresh()->name]));
 

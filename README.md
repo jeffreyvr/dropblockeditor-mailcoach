@@ -1,48 +1,16 @@
-# DropBlockEditor for Mailcoach
+<p><img src="./art/logo.svg" alt="Logo DropBlockEditor"></p>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffreyvr/dropblockeditor-mailcoach.svg?style=flat-square)](https://packagist.org/packages/jeffreyvr/dropblockeditor-mailcoach)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffreyvr/dropblockeditor-mailcoach/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jeffreyvr/dropblockeditor-mailcoach/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffreyvr/dropblockeditor-mailcoach/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jeffreyvr/dropblockeditor-mailcoach/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/jeffreyvr/dropblockeditor-mailcoach.svg?style=flat-square)](https://packagist.org/packages/jeffreyvr/dropblockeditor-mailcoach)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffreyvr/dropblockeditor-mailcoach.svg)](https://packagist.org/packages/jeffreyvanrossum/dropblockeditor-mailcoach)
+
+# DropBlockEditor for Mailcoach
 
 Use the DropBlockEditor in your Mailcoach application.
 
-## Installation
+> Note: This package is in the pre-release stage. Code is subject to change and should not considered stable at this time.
 
-You can install the package via composer:
+## Documentation
 
-```bash
-composer require jeffreyvr/dropblockeditor-mailcoach
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="dropblockeditor-mailcoach-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="dropblockeditor-mailcoach-views"
-```
-
-## Usage
-
-In your `mailcoach.php` config file, set the following as `content_editor`:
-
-```
-Jeffreyvr\DropBlockEditorMailcoach\Http\Livewire\PreEditor::class
-```
-
-This package comes with a basic `SaveButton`. To use it, in your `dropblockeditor.php` config file, add `dropblockeditor-mailcoach::save-button` to the buttons array.
-
-
-## Testing
-
-```bash
-composer test
-```
+Documentation for DropBlockEditor can be found on the [DropBlockEditor website](https://dropblockeditor.com/docs/beta/mailcoach).
 
 ## Changelog
 
@@ -50,11 +18,11 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Contributions are welcome!
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+If you discover any security-related issues, please [send an email](https://vanrossum.dev/en/contact) instead of using the issue tracker.
 
 ## Credits
 

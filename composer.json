@@ -1,6 +1,6 @@
 {
-    "name": "jeffreyvanrossum/dropblockeditor-mailcoach",
-    "description": "This is my package dropblockeditor-mailcoach",
+    "name": "jeffreyvr/dropblockeditor-mailcoach",
+    "description": "DropBlockEditor for Mailcoach",
     "keywords": [
         "jeffreyvr",
         "laravel",
@@ -18,8 +18,10 @@
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
+        "jeffreyvr/dropblockeditor": "^0.1.1",
         "livewire/livewire": "^2.12",
-        "spatie/laravel-package-tools": "^1.14.0"
+        "spatie/laravel-package-tools": "^1.14.0",
+        "spatie/laravel-mailcoach": "^6.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -30,6 +32,12 @@
         "pestphp/pest-plugin-laravel": "^2.0",
         "spatie/laravel-ray": "^1.26"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://satis.spatie.be"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Jeffreyvr\\DropBlockEditorMailcoach\\": "src",

@@ -11,25 +11,10 @@ class Editor extends DropBlockEditor
 
     public function updateProperties(): array
     {
-        return [
-            'result' => $this->result,
-            'model' => $this->model,
-            'activeBlocks' => $this->activeBlocks,
-        ];
-    }
+        $properties = parent::updateProperties();
 
-    public function render()
-    {
-        $this->process();
+        $properties['model'] = $this->model;
 
-        if (! $this->initialRender) {
-            $this->emit('editorIsUpdated', $this->updateProperties());
-        }
-
-        $this->initialRender = false;
-
-        return view('dropblockeditor::editor', [
-            'activeBlock' => $this->getActiveBlock()
-        ]);
+        return $properties;
     }
 }

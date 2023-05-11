@@ -12,13 +12,13 @@ class RenderEditorController
 
         $activeBlocks = [];
 
-        if(!empty($html['templateValues']['json'])) {
+        if (! empty($html['templateValues']['json'])) {
             $activeBlocks = json_decode($html['templateValues']['json'], true);
         }
 
         $base = 'dropblockeditor::base';
 
-        if($model->template) {
+        if ($model->template) {
             $base = str_replace('[[[content]]]', '{!! $slot !!}', $model->template->getHtml());
         }
 
@@ -27,7 +27,7 @@ class RenderEditorController
             'model' => $model,
             'html' => $html,
             'activeBlocks' => $activeBlocks,
-            'base' => $base
+            'base' => $base,
         ]);
     }
 }

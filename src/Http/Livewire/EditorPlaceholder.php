@@ -6,7 +6,7 @@ use Livewire\Component;
 use Spatie\Mailcoach\Domain\Campaign\Models\Concerns\HasHtmlContent;
 use Spatie\Mailcoach\Http\App\Livewire\LivewireFlash;
 
-class PreEditor extends Component
+class EditorPlaceholder extends Component
 {
     use LivewireFlash;
 
@@ -25,7 +25,7 @@ class PreEditor extends Component
     public function save()
     {
         $this->model->update([
-            'template_id' => $this->templateId
+            'template_id' => $this->templateId,
         ]);
 
         $this->flash(__mc(':name was updated.', ['name' => $this->model->fresh()->name]));
