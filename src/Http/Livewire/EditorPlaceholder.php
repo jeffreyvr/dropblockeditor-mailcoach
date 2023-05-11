@@ -4,9 +4,10 @@ namespace Jeffreyvr\DropBlockEditorMailcoach\Http\Livewire;
 
 use Livewire\Component;
 use Spatie\Mailcoach\Domain\Campaign\Models\Concerns\HasHtmlContent;
+use Spatie\Mailcoach\Http\App\Livewire\EditorComponent;
 use Spatie\Mailcoach\Http\App\Livewire\LivewireFlash;
 
-class EditorPlaceholder extends Component
+class EditorPlaceholder extends EditorComponent
 {
     use LivewireFlash;
 
