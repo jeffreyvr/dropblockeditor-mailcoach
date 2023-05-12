@@ -9,8 +9,6 @@
 
     <title>{{ isset($title) ? "{$title} |" : '' }} {{ isset($originTitle) ? "{$originTitle} |" : '' }} Mailcoach</title>
 
-    {!! \Spatie\Mailcoach\Mailcoach::styles() !!}
-
     @livewireStyles()
 </head>
 <body class="antialiased">
@@ -26,6 +24,8 @@
     @livewireScripts()
 
     @livewire('livewire-ui-spotlight')
+
+    {!! \Spatie\Mailcoach\Mailcoach::styles() !!}
 
     {!! \Spatie\Mailcoach\Mailcoach::scripts() !!}
 </body>

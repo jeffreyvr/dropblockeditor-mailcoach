@@ -3,6 +3,7 @@
 namespace Jeffreyvr\DropBlockEditorMailcoach\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Jeffreyvr\DropBlockEditor\DropBlockEditorServiceProvider;
 use Jeffreyvr\DropBlockEditorMailcoach\DropBlockEditorMailcoachServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;

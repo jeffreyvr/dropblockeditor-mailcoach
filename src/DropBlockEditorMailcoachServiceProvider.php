@@ -24,6 +24,14 @@ class DropBlockEditorMailcoachServiceProvider extends PackageServiceProvider
     {
         $middlewareClasses = config('mailcoach.middleware.web', []);
 
+        $editorButtons = config('dropblockeditor.buttons', []);
+
+        if (config('dropblockeditor-mailcoach.show_default_save_button', true)) {
+            $editorButtons[] = 'dropblockeditor-mailcoach::save-button';
+        }
+
+        config()->set('dropblockeditor.buttons', array_unique($editorButtons));
+
         Route::middleware($middlewareClasses)->prefix('')->group(__DIR__.'/../routes/web.php');
 
         Livewire::component('dropblockeditor-mailcoach::minimal', EditorPlaceholder::class);
